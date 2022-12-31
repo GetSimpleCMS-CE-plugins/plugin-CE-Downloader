@@ -86,7 +86,7 @@ $db = file_get_contents('https://getsimplecms-ce-plugins.github.io/db.json');
 $jsondb = json_decode($db);
 
 
-global $DOMAIN;
+global $SITEURL;
 
 
 
@@ -101,7 +101,7 @@ foreach ($jsondb as $key => $value) {
     <p class="info">' . $value->info . '</p>
     <hr>
     <p class="author">' . $value->author . '</p>
-    <form action="'.$DOMAIN.'admin/load.php?id=CEdownloader&&ok=ok" method="POST">
+    <form action="'.$SITEURL.'admin/load.php?id=CEdownloader&&ok=ok" method="POST">
     <input type="hidden" name="url" value="' . $value->url . '">
 <input type="submit" name="download" class="download" value="download">
     </form>
